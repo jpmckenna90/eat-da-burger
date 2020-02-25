@@ -2,24 +2,25 @@
 
 <h2>Burgers Yet to be Eaten</h2>
 
+
 <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
+  {{#each burger}}
+    {{#unless devoured}}
+      
     {{/unless}}
   {{/each}}
  
 </ul>
 
 <h2>Burgers that are Long Gone</h2>
-
+{{!-- 
 <ul>
   {{#each burger}}
     {{#if devoured}}
       {{> cats/cat-block sleep=false}}
     {{/if}}
   {{/each}}
-</ul>
+</ul> --}}
 
 <h2>Add a Burger
 <form class="create-form">
