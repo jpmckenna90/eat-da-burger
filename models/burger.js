@@ -6,9 +6,10 @@ const burger = {
       cb(res);
     })
   },
-  insertOne: function(){
-    orm.insertOne({
-
+  insertOne: function(cols, vals, cb){
+    // console.log('reaches model');
+    orm.insertOne("burgers", cols, vals, function(res){
+      cb(res);
     })
   },
   updateOne: function(){
