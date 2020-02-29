@@ -80,7 +80,6 @@ const orm = {
   },
 
   delete: function(table, condition, cb) {
-
     let queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
@@ -88,7 +87,6 @@ const orm = {
     console.log(queryString);
 
     connection.query(queryString, (err, result) => {
-
       if (err) {
         throw err;
       }

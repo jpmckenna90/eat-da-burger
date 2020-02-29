@@ -1,28 +1,28 @@
-h2{
+h2 {
   color: black;
 }
 
-body{ 
+body {
   background-color: tan;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-li{
+li {
   margin: 4%;
 }
 
-button{
+button {
   border-radius: 20%;
 }
 
-li button{
-  margin-left: 5%
+li button {
+  margin-left: 5%;
 }
 
-#burgerpng{
+#burgerpng {
   height: 25%;
   width: 25%;
 }

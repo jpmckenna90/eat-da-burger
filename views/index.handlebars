@@ -1,28 +1,27 @@
-
 <div class="row">
   <div class="col-md-6">
-    
+
     <h2>Burgers Yet to be Eaten</h2>
-    
+
     <ul>
       {{#each burger}}
       {{#unless devoured}}
-        {{> burger/burger-block devoured=false}}
-        {{/unless}}
+      {{> burger/burger-block devoured=false}}
+      {{/unless}}
       {{/each}}
     </ul>
   </div>
-  
+
   <div class="col-md-6">
-    
+
     <h2>Burgers that are Long Gone</h2>
     <ul>
       {{#each burger}}
       {{#if devoured}}
-        {{> burger/burger-block devoured=true}}
-        {{/if}}
+      {{> burger/burger-block devoured=true}}
+      {{/if}}
       {{/each}}
-     
+
     </ul>
   </div>
 </div>
@@ -31,18 +30,18 @@
   <div class="text-center">
     <h2>Add a Burger</h2>
     <form class="create-form">
-    
+
       <div class="form-group">
         <label for="burgername">Burger Name:</label>
         <input type="text" id="burgername" name="name">
       </div>
-    
+
       <div class="form-group">
         <label for="devo">You eat this thing already?</label><br>
         <input type="radio" name="devoured" value="1" checked> SURE DID!<br>
         <input type="radio" name="devoured" value="0"> Not yet...
       </div>
-    
+
       <button type="submit">Add Burger</button>
     </form>
   </div>

@@ -1,48 +1,48 @@
-  $(function(){
-
-    $(".devour").on("click", function(target){
-      console.log(target);
-      const id = event.target.dataset.id;
-      const newDevoured = event.target.dataset.newdevoured;
-      const devouredState = (newDevoured) => {
-        if(newDevoured){
-          return false
-        } else {
-          return true;
-        }
+$(function() {
+  $(".devour").on("click", function(target) {
+    console.log(target);
+    const id = event.target.dataset.id;
+    const newDevoured = event.target.dataset.newdevoured;
+    const devouredState = newDevoured => {
+      if (newDevoured) {
+        return false;
+      } else {
+        return true;
       }
+    };
     $.ajax("/api/burgers/" + id, {
-      type: "PUT", 
+      type: "PUT",
       data: devouredState
-    }).then(function(){
+    }).then(function() {
       // Reload page to reflect changes
       location.reload();
-    })})
-    
+    });
+  });
 
-    $(".create-form").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
+  $(".create-form").on("submit", function(event) {
     event.preventDefault();
-    // Create new burger object to be passed 
+    // Create new burger object to be passed
     var newBurger = {
-      name: $("#burgername").val().trim(),
-      devoured: $("[name=devoured]:checked").val().trim()
+      name: $("#burgername")
+        .val()
+        .trim(),
+      devoured: $("[name=devoured]:checked")
+        .val()
+        .trim()
     };
-   
+
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
-    }).then(
-      function() {
-        console.log("created new burger");
-        // Reload page to reflect changes
-        location.reload();
-      }
-    );
-  })
+    }).then(function() {
+      console.log("created new burger");
+      // Reload page to reflect changes
+      location.reload();
+    });
+  });
 
-  $(".delete").on("click", function(event){
+  $(".delete").on("click", function(event) {
     event.preventDefault();
     console.log("delete button");
     const id = event.target.dataset.id;
@@ -53,6 +53,6 @@
       console.log("deleted burger ", id);
       // Reload page to reflect changes
       location.reload();
-    })
-  })
+    });
+  });
 });
