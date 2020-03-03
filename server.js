@@ -17,7 +17,7 @@ app.set('port', (process.env.PORT || 8080));
 
 app.get('/', function(req, res){
   var result ="app is running"
-  Response.send(result);
+  res.send(result);
 }).listen(app.get('port'), function(){
   console.log('app is running, server is listening on port ', app.get('port'));
 })
